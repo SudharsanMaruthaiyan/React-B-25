@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Comments from "../pages/Comments";
 import ProductDetail from "../pages/ProductDetail";
 import ErrorPage from "../pages/ErrorPage";
+import Contact from "../pages/Contact/Contact";
+import ImagePage from "../pages/ImagePage";
 
 const Route = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const Route = createBrowserRouter([
       {
         path: "/productdetail/:produtId", // /productDetail/asdfasdf
         element: <ProductDetail />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/imagepage",
+        element: <ImagePage />,
       },
     ],
     errorElement: <ErrorPage />,
