@@ -2,10 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "../layout/AppLayout";
 import Home from "../pages/Home";
 import Comments from "../pages/Comments";
-import ProductDetail from "../pages/ProductDetail";
+// import ProductDetail from "../pages/ProductDetail";
 import ErrorPage from "../pages/ErrorPage";
 import Contact from "../pages/Contact/Contact";
 import ImagePage from "../pages/ImagePage";
+import ComponentA from "../pages/Prop/ComponentA";
+import { lazy, Suspense } from "react";
+
+const ProductDetails = lazy(() => import("../pages/ProductDetail"));
 
 const Route = createBrowserRouter([
   {
@@ -22,7 +26,11 @@ const Route = createBrowserRouter([
       },
       {
         path: "/productdetail/:produtId", // /productDetail/asdfasdf
-        element: <ProductDetail />,
+        element: (
+          <Suspense fallback={"<<<<Loading...>>>>"}>
+            <ProductDetails />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
@@ -31,6 +39,10 @@ const Route = createBrowserRouter([
       {
         path: "/imagepage",
         element: <ImagePage />,
+      },
+      {
+        path: "/props",
+        element: <ComponentA />,
       },
     ],
     errorElement: <ErrorPage />,
