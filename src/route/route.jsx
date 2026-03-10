@@ -8,6 +8,7 @@ import Contact from "../pages/Contact/Contact";
 import ImagePage from "../pages/ImagePage";
 import ComponentA from "../pages/Prop/ComponentA";
 import { lazy, Suspense } from "react";
+import Expensive from "../pages/Expensive";
 
 const ProductDetails = lazy(() => import("../pages/ProductDetail"));
 
@@ -43,6 +44,10 @@ const Route = createBrowserRouter([
       {
         path: "/props",
         element: <ComponentA />,
+      },
+      {
+        path: "/expensive",
+        element: <Expensive />,
       },
     ],
     errorElement: <ErrorPage />,
