@@ -6,7 +6,6 @@ import Comments from "../pages/Comments";
 import ErrorPage from "../pages/ErrorPage";
 import Contact from "../pages/Contact/Contact";
 import ImagePage from "../pages/ImagePage";
-import ComponentA from "../pages/Prop/ComponentA";
 import { lazy, Suspense } from "react";
 import Expensive from "../pages/Expensive";
 
@@ -40,10 +39,6 @@ const Route = createBrowserRouter([
       {
         path: "/imagepage",
         element: <ImagePage />,
-      },
-      {
-        path: "/props",
-        element: <ComponentA />,
       },
       {
         path: "/expensive",
